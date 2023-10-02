@@ -2,7 +2,9 @@
 
 Ever find yourself irritated by the incessant ads on your Twitter feed? **X Ad Banhammer** is here to save your scrolling experience! This Tampermonkey script tirelessly hunts down advertising accounts on your Twitter timeline and blocks them even before you get a chance to see the ad. Just keep scrolling ad-free!
 
-[![Install Script](https://github.com/hoblin/x-ad-banhammer/assets/28090/ff2ae601-294c-4da9-adf6-36718860476f)](https://github.com/hoblin/x-ad-banhammer/raw/main/X_Ad_Banhammer.user.js)
+[![Install Script](https://user-images.githubusercontent.com/118488816/202579095-03336ed4-80ae-4066-b764-3636772a4fb6.png)](https://github.com/hoblin/x-ad-banhammer/raw/main/X_Ad_Banhammer.user.js)
+
+
 
 ## Installation
 
