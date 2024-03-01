@@ -5,6 +5,11 @@ Ever find yourself irritated by the incessant ads on your Twitter feed? **X Ad B
 [![Install Script](https://user-images.githubusercontent.com/118488816/202579095-03336ed4-80ae-4066-b764-3636772a4fb6.png)](https://github.com/hoblin/x-ad-banhammer/raw/main/X_Ad_Banhammer.user.js)
 
 
+## Features
+
+- **Ad Blocking**: Automatically identifies and blocks advertising accounts on your Twitter feed.
+- **Premium Plus Offer Decline**: Newly added in version 1.2.0, the script now automatically declines Twitter's Premium Plus offers after blocking an ad, ensuring an uninterrupted experience.
+- **Open-Source**: Free to use and modify under the MIT license.
 
 ## Installation
 
