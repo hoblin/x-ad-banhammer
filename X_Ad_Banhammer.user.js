@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Ad Banhammer
 // @namespace    http://tampermonkey.net/
-// @version      1.1.0
+// @version      1.1.1
 // @description  Block advertising accounts on Twitter
 // @author       https://github.com/hoblin
 // @downloadURL  https://github.com/hoblin/x-ad-banhammer/raw/main/X_Ad_Banhammer.user.js
@@ -26,6 +26,38 @@
     }
   }
 
+  // Recently after blocking an ad,
+  // Twitter has been showing a premium plus offer.
+  // This function will decline it.
+  function declinePremiumPlus(attempts) {
+    log("Declining Premium Plus offer...");
+    if (attempts <= 0) {
+      log("Premium Plus offer was not found after multiple attempts");
+      // Reconnect observer
+      setupObserver();
+      return;
+    }
+
+    // Find <div role="button" with exact text "Maybe later"
+    const declineButton = $('div[role="button"]')
+      .filter(function () {
+        return $(this).text().trim() === "Maybe later";
+      })
+      .get(0);
+
+    if (declineButton) {
+      log("Maybe later button found:", declineButton);
+      // Maybe later button found, proceed to the next step
+      simulateClick(declineButton);
+      // Reconnect observer after final action
+      setupObserver();
+    } else {
+      log("Maybe later button not found, retrying...");
+      // Wait for 500ms before retrying
+      setTimeout(() => declinePremiumPlus(attempts - 1), 500);
+    }
+  }
+
   function confirmBlock(attempts) {
     log("Confirming block...");
     if (attempts <= 0) {
@@ -46,8 +78,8 @@
       log("Block button found:", confirmationModalButton);
       // Block button found, proceed to the next step
       simulateClick(confirmationModalButton);
-      // Reconnect observer after final action
-      setupObserver();
+      // Decline Premium Plus offer
+      declinePremiumPlus(maxAttempts);
     } else {
       log("Block button not found, retrying...");
       // Wait for 500ms before retrying
