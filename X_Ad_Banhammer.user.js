@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Ad Banhammer
 // @namespace    http://tampermonkey.net/
-// @version      1.1.1
+// @version      1.2.0
 // @description  Block advertising accounts on Twitter
 // @author       https://github.com/hoblin
 // @downloadURL  https://github.com/hoblin/x-ad-banhammer/raw/main/X_Ad_Banhammer.user.js
