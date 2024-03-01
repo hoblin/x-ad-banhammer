@@ -30,6 +30,3 @@ Ever find yourself irritated by the incessant ads on your Twitter feed? **X Ad B
 ## License
 
 MIT License
-
-Copyright (c) 2023 @hoblin
-
