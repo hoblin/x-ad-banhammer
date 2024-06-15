@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         X Ad Banhammer
 // @namespace    http://tampermonkey.net/
-// @version      1.2.0
+// @version      1.3.0
 // @description  Block advertising accounts on Twitter
 // @author       https://github.com/hoblin
 // @downloadURL  https://github.com/hoblin/x-ad-banhammer/raw/main/X_Ad_Banhammer.user.js
@@ -39,7 +39,7 @@
     }
 
     // Find <div role="button" with exact text "Maybe later"
-    const declineButton = $('div[role="button"]')
+    const declineButton = $('button[role="button"]')
       .filter(function () {
         return $(this).text().trim() === "Maybe later";
       })
@@ -68,7 +68,7 @@
     }
 
     // Find <div role="button" with exact text "Block"
-    const confirmationModalButton = $('div[role="button"]')
+    const confirmationModalButton = $('button[role="button"]')
       .filter(function () {
         return $(this).text().trim() === "Block";
       })
@@ -124,7 +124,7 @@
     const menuButton = $(adSpan)
       .parent()
       .parent()
-      .find('div[aria-label="More"][role="button"]')
+      .find('button[aria-label="More"][role="button"]')
       .get(0);
     if (menuButton) {
       // Menu button found, proceed to the next step
